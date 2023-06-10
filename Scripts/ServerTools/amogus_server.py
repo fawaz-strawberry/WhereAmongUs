@@ -5,7 +5,7 @@ import subprocess
 app = Flask(__name__)
 
 activation_server = "C:/Users/fawaz/Documents/Github/SAM/Scripts/activate.bat"
-runner_script = "C:/Users/fawaz/Documents/Github/WhereAmongUs/runner.bat"
+runner_script = "C:/Users/fawaz/Documents/Github/WhereAmongUs/Scripts/OverlayGenerator/runner.bat"
 uploads_folder = "C:/Users/fawaz/Documents/Github/WhereAmongUs/Input_Images/"
 output_folder = "C:/Users/fawaz/Documents/Github/WhereAmongUs/Output_Images/"
 

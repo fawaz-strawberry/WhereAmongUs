@@ -1,11 +1,13 @@
 import sys
 import subprocess
-import os
+import yaml
+
+config = yaml.safe_load(open("../../configuration.yaml"))
 
 def run_segmentation(input_image):
 
     # Replace this line with the actual command to run your segmentation script
-    command = f"python C:/Users/fawaz/Documents/Github/SAM/segment-anything/scripts/amg.py --checkpoint C:/Users/fawaz/Documents/Github/SAM/models/sam_vit_h_4b8939.pth --input {input_image} --output Output_Images/"
+    command = f"python " + config["Mask_Generator_Path"] + " --checkpoint " + config["Checkpoint_Path"] + f" --input {input_image} --output " + config["Output_Path"]
     subprocess.run(command, shell=True, check=True)
 
 if __name__ == "__main__":

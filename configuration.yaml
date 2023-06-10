@@ -1,0 +1,6 @@
+#Mask Generator should reference the script that generates the many masks for the image
+Mask_Generator_Path: "C:/Users/fawaz/Documents/Github/SAM/segment-anything/scripts/amg.py"
+Checkpoint_Path: "C:/Users/fawaz/Documents/Github/SAM/models/sam_vit_h_4b8939.pth"
+Reference_Masks_Dir: "C:/Users/fawaz/Documents/Github/WhereAmongUs/ReferenceMasks/"
+Cover_Image_Dir: "C:/Users/fawaz/Documents/Github/WhereAmongUs/amongus_original.png"
+Output_Path: "C:/Users/fawaz/Documents/Github/WhereAmongUs/Output_Images/"

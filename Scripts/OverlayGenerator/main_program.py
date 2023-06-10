@@ -5,6 +5,9 @@ import cv2
 from PIL import Image
 import matplotlib
 import matplotlib.cm as cm
+import yaml
+
+config = yaml.safe_load(open("../../configuration.yaml"))
 
 '''
 IOU (Intersection over Union) is a metric used to evaluate the performance of a segmentation algorithm.
@@ -161,7 +164,7 @@ def compare_masks(mask1, mask2, rotation_steps=36, padding=0):
 
 def main(input_image_path, output_masks_dir):
     # Set the paths to the reference masks directory and the output masks directory
-    reference_masks_dir = "ReferenceAmongUs/"
+    reference_masks_dir = config["Reference_Masks_Dir"]
     #output_masks_dir = "C:/Users/fawaz/Documents/Github/SAM/output_images/where_waldo"
 
     # Read the reference masks into a list
@@ -194,7 +197,7 @@ def main(input_image_path, output_masks_dir):
             print(f"Comparing {mask_path} with reference masks... iou_score: {max_iou_score}, avg_iou_score: {avg_iou_score}")
 
     # Sort the list in descending order based on the max IoU scores
-    #sorted_iou_scores = sorted(iou_scores, key=lambda x: x[0], reverse=True)
+    # sorted_iou_scores = sorted(iou_scores, key=lambda x: x[0], reverse=True)
     input_image = cv2.imread(input_image_path)
 
     masks_with_scores = []
@@ -203,8 +206,8 @@ def main(input_image_path, output_masks_dir):
             mask = read_mask(mask_path)
             masks_with_scores.append((mask, max_iou_score, best_angle))
 
-    overlay_image_path = "amongus_original.png"
-    output_image_path = os.path.join("output_images", "combined_output_" + str((os.path.basename(input_image_path))[:-4]) + ".png")
+    overlay_image_path = config["Cover_Image_Dir"]
+    output_image_path = os.path.join(config["Output_Path"], "combined_output_" + str((os.path.basename(input_image_path))[:-4]) + ".png")
     generate_output_image(input_image, masks_with_scores, overlay_image_path, output_image_path)
 
 

@@ -98,9 +98,9 @@ def generate_output_image(input_image, masks_with_scores, overlay_image_path, ou
     input_image_resized = cv2.resize(input_image, (int(input_image.shape[1]/2), int(input_image.shape[0]/2)))
     output_image_resized = cv2.resize(output_image, (int(output_image.shape[1]/2), int(output_image.shape[0]/2)))
     combined_image = np.concatenate((input_image_resized, output_image_resized), axis=1)
-    cv2.imshow("Input and Output Images", combined_image)
+    # cv2.imshow("Input and Output Images", combined_image)
     
-    cv2.waitKey(0)
+    # cv2.waitKey(0)
 
 
 def compare_masks(mask1, mask2, rotation_steps=36, padding=0):

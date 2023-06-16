@@ -12,6 +12,8 @@ output_folder = "C:/Users/fawaz/Documents/Github/WhereAmongUs/Output_Images/"
 
 @app.route('/process_image', methods=['POST'])
 def process_image():
+
+
     if 'file' not in request.files:
         return "No file part", 400
 
@@ -37,4 +39,4 @@ def process_image():
         return send_file(output_image_path, mimetype='image/png')
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(host="0.0.0.0", port=5000)

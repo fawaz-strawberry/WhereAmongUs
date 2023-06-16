@@ -1,6 +1,6 @@
 import requests
 
-url = "http://localhost:5000/process_image"
+url = "http://0.0.0.0:5000/process_image"
 output_path = "C:/Users/fawaz/Documents/Github/WhereAmongUs/API_Returns/" 
 file_path = "C:/Users/fawaz/Documents/Github/WhereAmongUs/Input_Images/basketball-game-5.png"
 

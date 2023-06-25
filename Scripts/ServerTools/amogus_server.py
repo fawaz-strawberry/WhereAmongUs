@@ -10,7 +10,7 @@ uploads_folder = "C:/Users/fawaz/Documents/Github/WhereAmongUs/Input_Images/"
 output_folder = "C:/Users/fawaz/Documents/Github/WhereAmongUs/Output_Images/"
 
 
-@app.route('/process_image', methods=['POST'])
+@app.route('/process_image', methods=['POST']) # type: ignore
 def process_image():
 
 
@@ -25,14 +25,14 @@ def process_image():
         filename = file.filename
         print("Saving file")
         print(filename)
-        filepath = os.path.join(uploads_folder, filename)
+        filepath = os.path.join(uploads_folder, filename) # type: ignore
         print("Current Filepath")
         print(filepath)
         file.save(filepath)
 
         # activate the environment and run the batch script
         subprocess.run([activation_server, "&", runner_script, filepath], shell=True)
-        filename = os.path.basename(filename)
+        filename = os.path.basename(filename) # type: ignore
         output_image_path = output_folder + "combined_output_" + (filename)[:-4] + ".png"
         print("Output Image: " + output_image_path)
 

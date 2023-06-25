@@ -7,7 +7,7 @@ import matplotlib
 import matplotlib.cm as cm
 import yaml
 
-config = yaml.safe_load(open("../../configuration.yaml"))
+config = yaml.safe_load(open("C:/Users/fawaz/Documents/Github/WhereAmongUs/configuration.yaml"))
 
 '''
 IOU (Intersection over Union) is a metric used to evaluate the performance of a segmentation algorithm.

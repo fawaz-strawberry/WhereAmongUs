@@ -2,7 +2,7 @@ import sys
 import subprocess
 import yaml
 
-config = yaml.safe_load(open("../../configuration.yaml"))
+config = yaml.safe_load(open("C:/Users/fawaz/Documents/Github/WhereAmongUs/configuration.yaml"))
 
 def run_segmentation(input_image):
 
@@ -16,6 +16,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     input_image = sys.argv[1]
+    print(input_image)
     run_segmentation(input_image)
 
     

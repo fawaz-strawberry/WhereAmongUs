@@ -1,6 +1,6 @@
 @echo off
 set input_image=%1
-set output_masks_dir=../../Output_Images/
+set output_masks_dir=C:/Users/fawaz/Documents/Github/WhereAmongUs/Output_Images/
 
 REM Extract the input image filename without the extension
 for %%A in ("%input_image%") do (
